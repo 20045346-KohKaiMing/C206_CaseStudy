@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.time.LocalDate;
 
 public class RequestQuotation {
 
@@ -8,16 +8,17 @@ public class RequestQuotation {
 	private int contactNumber;
 	private String email;
 	private double budget;
-	private Date completionDate;
+	private LocalDate completionDate;
 	private String renoType;
 	private int noRenoRoom;
 	private int noRenoToilet;
 	private String renoStyle;
+	private String forUrgentRequest;
 
 	
 	public RequestQuotation(String propertyType, double areaSize, String requestName, int contactNumber, String email,
-			double budget, Date completionDate, String renoType, int noRenoRoom, int noRenoToilet,
-			String renoStyle) {
+			double budget, LocalDate completionDate, String renoType, int noRenoRoom, int noRenoToilet, String renoStyle,
+			String forUrgentRequest) {
 		super();
 		this.propertyType = propertyType;
 		this.areaSize = areaSize;
@@ -30,7 +31,10 @@ public class RequestQuotation {
 		this.noRenoRoom = noRenoRoom;
 		this.noRenoToilet = noRenoToilet;
 		this.renoStyle = renoStyle;
+		this.forUrgentRequest = forUrgentRequest;
 	}
+
+	
 	
 
 	public String getPropertyType() {
@@ -81,11 +85,11 @@ public class RequestQuotation {
 		this.budget = budget;
 	}
 
-	public Date getCompletionDate() {
+	public LocalDate getCompletionDate() {
 		return completionDate;
 	}
 
-	public void setCompletionDate(Date completionDate) {
+	public void setCompletionDate(LocalDate completionDate) {
 		this.completionDate = completionDate;
 	}
 
@@ -119,6 +123,16 @@ public class RequestQuotation {
 
 	public void setRenoStyle(String renoStyle) {
 		this.renoStyle = renoStyle;
+	}
+
+
+	public String getForUrgentRequest() {
+		return forUrgentRequest;
+	}
+
+
+	public void setForUrgentRequest(String forUrgentRequest) {
+		this.forUrgentRequest = forUrgentRequest;
 	}
 
 }

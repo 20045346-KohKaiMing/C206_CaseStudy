@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import java.util.Date;
@@ -11,15 +12,26 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class C206_CaseStudyTest {
-	
+	private RequestQuotation rq1;
+	private RequestQuotation rq2;
 	ArrayList<RequestQuotation> rqList;
+	
 
 	@Before
 	public void setUp() throws Exception {
+		//prepare test data
+		rq1 = new RequestQuotation("HDB", 40.5, "testrequest", 88888888, "test@gmail.com", 10000,
+				LocalDate.of(2021, 8, 11), "room", 4, 4, "-", "urgent");
+		rq2 = new RequestQuotation("private", 30.5, "testrequest2", 88888888, "test123@gmail.com", 40000,
+				LocalDate.of(2021, 8, 30), "kitchen", 5, 2, "-", "urgent");
+		rqList = new ArrayList<RequestQuotation>();
+		
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		rq1 = null;
+		rqList = null;
 	}
 
 	@Test
@@ -63,20 +75,40 @@ public class C206_CaseStudyTest {
 
 	//Add Request for Quote
 	public void addRequestQuotation() {
-		// Item list is not null, so that can add a new item - boundary
-		assertNotNull("Check if there is valid Request for quotation arraylist to add to", rqList);
+		// List is not null, so that can add a new request for quote - boundary
+		assertNotNull("Check if there is valid Request for Quotation arraylist to add to", rqList);
+
+		// Given an empty list, after adding 1 Request for Quote, the size of the
+		// list is 1 - normal
+		// The Request for Quotation just added is as same as the first Request for
+		// Quote of the list
+		rqList.add(rq1);
+		assertEquals("Test that Request for Quotation arraylist size is 1", 1, rqList.size());
+		assertSame("Test that Request for Quotation is added", rq1, rqList.get(0));
+
+		// Add another Request for Quote. test The size of the list is 2? -normal
+		// The item just added is as same as the second Request for Quote of the
+		// list
+		rqList.add(rq2);
+		assertEquals("Test that Request for Quotation arraylist size is 2", 2, rqList.size());
+		assertSame("Test that Request for Quotation is added", rq2, rqList.get(0));
 		
 	}
 	
 	public void viewRequestQuotation() {
-		// Test if Item list is not null but empty -boundary
-		assertNotNull("Check if there is valid Request for Quotation arraylist to add to", rqList);
+		//List is not null, so that can view all request for quote - boundary
+		assertNotNull("Check if there is valid Request for Quotation arraylist to view from", rqList);
 		
+		//Given an empty list, after adding 2 Request for Quote, test if the size of the list is 2 - normal
+		rqList.add(rq1);
+		rqList.add(rq2);
+		assertEquals("Test that Request for Quotation arraylist size is 2", 2, rqList.size());
+				
 		
 	}
 	
 	public void deleteRequestQuotation() {
-		// Test if Item list is not null but empty -boundary
+//		list is not null, so that can delete a request for quote - boundary
 		assertNotNull("Check if there is valid Request for Quotation arraylist to delete from", rqList);
 
 	}
