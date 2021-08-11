@@ -35,4 +35,64 @@ public class C206_CaseStudy {
 		
 	}
 	
+	//=================================View All Packages ============================================
+	
+	public static String retrivePackages(ArrayList<Package> PackageList) {
+		
+		
+		String output =  "";
+		for (int i = 0; i < PackageList.size(); i++) {
+			 output += String.format("%-10s %-10s %-10s %-10s %-10d \n", PackageList.get(i).getCode()
+					,PackageList.get(i).getDescription(), PackageList.get(i).getStartDate().toString(),
+					PackageList.get(i).getEndDate().toString(),PackageList.get(i).getAmount());
+			
+		}
+		return output;
+		
+	}
+	public static void viewPackages(ArrayList<Package> PackageList) {
+		
+		String output =  "";
+		output += ("==PackageList==\n");
+		output += String.format("%-10s %-10s %-10s $-10s $-10s \n", "Code", "Description","Start date","End Date","Amount");
+		output += retrivePackages(PackageList);	
+		System.out.println(output);
+	}
+	
+	//===============================Delete a Package====================================
+	
+	public static boolean doDeletePackage(ArrayList<Package> PackageList,String code) {
+		boolean isdeleted = false;
+
+		for (int i = 0; i < PackageList.size(); i++) {
+			
+			String assetTag = PackageList.get(i).getCode();
+			
+			if (code.equalsIgnoreCase(code)	) {
+				
+				
+				PackageList.set(i, null);
+				
+				
+				isdeleted = true;
+				
+			}
+		}
+		return isdeleted;
+	}
+	
+	
+	public static void deletePackage(ArrayList<Package> PackageList) {
+		C206_CaseStudy.viewPackages(PackageList);
+		String code = Helper.readString("Enter Package code > ");
+		
+		Boolean isLoaned =doDeletePackage(PackageList,code);
+		
+		if (isLoaned == false) {
+			System.out.println("Invalid asset tag");
+		} else {
+			System.out.println("Camcorder " + code + " loaned out");
+		}
+	}
+	
 }
