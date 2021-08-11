@@ -50,8 +50,4 @@ public class Appointment {
 		return address;
 	}
 
-	public String getCustName() {
-		return custName;
-	}
-
 }
