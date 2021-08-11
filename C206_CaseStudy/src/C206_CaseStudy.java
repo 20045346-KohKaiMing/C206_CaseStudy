@@ -1,10 +1,9 @@
-import java.util.ArrayList;
+
 
 public class C206_CaseStudy {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<QuotationRequest> qrList = new ArrayList<QuotationRequest>();
 		
 		int option = 0;
 		
@@ -23,6 +22,10 @@ public class C206_CaseStudy {
 				
 			}else if(option == 5) {
 				
+			}else if(option == 6){
+				System.out.println("Bye!");
+			}else {
+				System.out.println("Invalid Option");
 			}
 			
 		}

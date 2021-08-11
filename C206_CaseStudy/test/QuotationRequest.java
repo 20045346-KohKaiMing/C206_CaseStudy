@@ -17,7 +17,6 @@ public class QuotationRequest {
 	public QuotationRequest(String propertyType, double areaSize, String requestName, int contactNumber, String email,
 			double budget, LocalDate completionDate, String renoType, int noRenoRoom, int noRenoToilet,
 			String renoStyle) {
-		super();
 		this.propertyType = propertyType;
 		this.areaSize = areaSize;
 		this.requestName = requestName;
