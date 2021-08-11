@@ -1,5 +1,4 @@
-
-import java.time.LocalDate;
+import java.util.Date;
 
 public class RequestQuotation {
 
@@ -9,7 +8,7 @@ public class RequestQuotation {
 	private int contactNumber;
 	private String email;
 	private double budget;
-	private LocalDate completionDate;
+	private Date completionDate;
 	private String renoType;
 	private int noRenoRoom;
 	private int noRenoToilet;
@@ -17,7 +16,7 @@ public class RequestQuotation {
 
 	
 	public RequestQuotation(String propertyType, double areaSize, String requestName, int contactNumber, String email,
-			double budget, LocalDate completionDate, String renoType, int noRenoRoom, int noRenoToilet,
+			double budget, Date completionDate, String renoType, int noRenoRoom, int noRenoToilet,
 			String renoStyle) {
 		super();
 		this.propertyType = propertyType;
@@ -82,11 +81,11 @@ public class RequestQuotation {
 		this.budget = budget;
 	}
 
-	public LocalDate getCompletionDate() {
+	public Date getCompletionDate() {
 		return completionDate;
 	}
 
-	public void setCompletionDate(LocalDate completionDate) {
+	public void setCompletionDate(Date completionDate) {
 		this.completionDate = completionDate;
 	}
 
