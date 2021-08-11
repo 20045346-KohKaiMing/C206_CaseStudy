@@ -1,10 +1,20 @@
 import java.util.ArrayList;
 
-public class C206_CaseStudy {
+import java.util.Date;
 
+
+public class C206_CaseStudy {
+	
+
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
+		ArrayList<Package> PackageList = new ArrayList<Package>();
+
+
 		ArrayList<RequestQuotation> rqList = new ArrayList<RequestQuotation>();
+
 		
 		int option = -1;
 		
@@ -31,6 +41,7 @@ public class C206_CaseStudy {
 				System.out.println("Invalid Option");
 			}
 		}
+
 	}
 	
 	public static void setHeader(String header) {
@@ -52,5 +63,21 @@ public class C206_CaseStudy {
 	} 
 	
 	
+	//================================ Add Package ==================================================
+	public static Package inputPackage() {
+		String Code = Helper.readString("Enter package code :");
+		String description = Helper.readString("Enter description :");
+		Date startDate = Helper.readDate("Enter Start Date :");
+		Date endDate = Helper.readDate("Enter End Date :");
+		int amount = Helper.readInt("Enter package amount :");
+		
+		Package X = new Package(Code, description,  startDate, endDate, amount);
+		return X;
+	}
+	public static void addPackage(ArrayList<Package> PackageList, Package X) {
+		
+		PackageList.add(X);
+		
+	}
 	
 }
