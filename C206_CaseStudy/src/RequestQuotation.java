@@ -1,6 +1,7 @@
+
 import java.time.LocalDate;
 
-public class QuotationRequest {
+public class RequestQuotation {
 
 	private String propertyType;
 	private double areaSize;
@@ -14,9 +15,11 @@ public class QuotationRequest {
 	private int noRenoToilet;
 	private String renoStyle;
 
-	public QuotationRequest(String propertyType, double areaSize, String requestName, int contactNumber, String email,
+	
+	public RequestQuotation(String propertyType, double areaSize, String requestName, int contactNumber, String email,
 			double budget, LocalDate completionDate, String renoType, int noRenoRoom, int noRenoToilet,
 			String renoStyle) {
+		super();
 		this.propertyType = propertyType;
 		this.areaSize = areaSize;
 		this.requestName = requestName;
@@ -29,6 +32,7 @@ public class QuotationRequest {
 		this.noRenoToilet = noRenoToilet;
 		this.renoStyle = renoStyle;
 	}
+	
 
 	public String getPropertyType() {
 		return propertyType;
