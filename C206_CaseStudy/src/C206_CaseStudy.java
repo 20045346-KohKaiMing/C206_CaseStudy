@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+
 import java.util.Date;
+
 
 public class C206_CaseStudy {
 	
@@ -7,9 +9,14 @@ public class C206_CaseStudy {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 		ArrayList<Package> PackageList = new ArrayList<Package>();
 
+
+		ArrayList<RequestQuotation> rqList = new ArrayList<RequestQuotation>();
+
 	}
+	
 	
 	//================================ Add Package ==================================================
 	public static Package inputPackage() {
